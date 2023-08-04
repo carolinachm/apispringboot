@@ -1,12 +1,11 @@
-package com.apicomspringboot.apispringboot.repositorio;
+package com.apicomspringboot.api.repositorio;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-
-import com.apicomspringboot.apispringboot.modelo.Pessoa;
+import com.apicomspringboot.api.modelo.Pessoa;
 
 public interface PessoaRepositorio extends CrudRepository<Pessoa, Long>{
 

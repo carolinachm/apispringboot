@@ -1,4 +1,4 @@
-package com.apicomspringboot.apispringboot.modelo;
+package com.apicomspringboot.api.modelo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

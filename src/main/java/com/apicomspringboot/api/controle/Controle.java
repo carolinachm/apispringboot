@@ -1,4 +1,4 @@
-package com.apicomspringboot.apispringboot.controle;
+package com.apicomspringboot.api.controle;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;

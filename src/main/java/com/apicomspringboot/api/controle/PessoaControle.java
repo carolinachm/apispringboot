@@ -1,4 +1,4 @@
-package com.apicomspringboot.apispringboot.controle;
+package com.apicomspringboot.api.controle;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.apicomspringboot.apispringboot.modelo.Pessoa;
-import com.apicomspringboot.apispringboot.repositorio.PessoaRepositorio;
+import com.apicomspringboot.api.modelo.Pessoa;
+import com.apicomspringboot.api.repositorio.PessoaRepositorio;
 
 @RestController
 public class PessoaControle {
