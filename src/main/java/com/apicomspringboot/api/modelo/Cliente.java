@@ -5,20 +5,22 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-
 
 @Data
 @Entity
-@Table(name = "tb_pessoas")
-public class Pessoa {
+@Table(name = "tb_cliente")
+public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
+    @NotEmpty(message = "informe um nome")
     private String nome;
-    private int idade;
-
-   
+    @Email(message = "informe um email valido")
+    private String email;
     
 }

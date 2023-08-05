@@ -3,6 +3,7 @@ package com.apicomspringboot.api.controle;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,21 +14,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.apicomspringboot.api.modelo.Pessoa;
 import com.apicomspringboot.api.repositorio.PessoaRepositorio;
+import com.apicomspringboot.api.servico.PessoaServico;
 
 @RestController
 public class PessoaControle {
 
     @Autowired
+    private PessoaServico pessoaServico;
+    @Autowired
     private PessoaRepositorio pessoaRepositorio;
 
     @PostMapping("/api/pessoa")
-    public Pessoa cadastraPessoa(@RequestBody Pessoa pessoa) {
-        return pessoaRepositorio.save(pessoa);
+    public ResponseEntity<?> cadastraPessoa(@RequestBody Pessoa pessoa) {
+        return pessoaServico.cadastraPessoa(pessoa);
     }
 
     @GetMapping("/api/pessoa")
-    public List<Pessoa> buscarTodasPessoas() {
-        return pessoaRepositorio.findAll();
+    public ResponseEntity<?> buscarTodasPessoas() {
+        return pessoaServico.buscarTodasPessoas();
     }
 
     @GetMapping("/api/{codigo}")
@@ -75,13 +79,12 @@ public class PessoaControle {
     }
     
     @PutMapping("/api")
-    public Pessoa editarPessoa(@RequestBody Pessoa pessoa) {
-        return pessoaRepositorio.save(pessoa);
+    public ResponseEntity<?> editarPessoa(@RequestBody Pessoa pessoa) {
+        return pessoaServico.editarPessoa(pessoa);
     }
 
     @DeleteMapping("/api/{codigo}")
-    public void excluirPessoa(@PathVariable Long codigo) {
-        Pessoa pessoa = buscarPessoaCodigo(codigo);
-        pessoaRepositorio.delete(pessoa);
+    public ResponseEntity<?> excluirPessoa(@PathVariable Long codigo) {
+       return pessoaServico.excluirPessoa(codigo);
     }
 }

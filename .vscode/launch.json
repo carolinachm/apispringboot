@@ -9,6 +9,16 @@
             "projectName": "apispringboot",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ApispringbootApplication<apispringboot>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.apicomspringboot.api.ApispringbootApplication",
+            "projectName": "apispringboot",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
